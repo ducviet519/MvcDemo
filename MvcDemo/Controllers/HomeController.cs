@@ -12,7 +12,7 @@ namespace MvcDemo.Controllers
         //GET: /Home/
         public ActionResult Index()
         {
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
                 List<Category> lstCategory = db.Categories.Where(x=>x.Parent==null).ToList();
                 return View(lstCategory);

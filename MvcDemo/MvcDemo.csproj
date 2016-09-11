@@ -134,28 +134,28 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Article.cs">
-      <DependentUpon>ModelMvcDemo.tt</DependentUpon>
+      <DependentUpon>DemoData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>ModelMvcDemo.tt</DependentUpon>
+      <DependentUpon>DemoData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelMvcDemo.Context.cs">
+    <Compile Include="Models\DemoData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelMvcDemo.Context.tt</DependentUpon>
+      <DependentUpon>DemoData.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelMvcDemo.cs">
+    <Compile Include="Models\DemoData.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelMvcDemo.tt</DependentUpon>
+      <DependentUpon>DemoData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelMvcDemo.Designer.cs">
+    <Compile Include="Models\DemoData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelMvcDemo.edmx</DependentUpon>
+      <DependentUpon>DemoData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>ModelMvcDemo.tt</DependentUpon>
+      <DependentUpon>DemoData.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1470,22 +1470,22 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <EntityDeploy Include="Models\ModelMvcDemo.edmx">
+    <EntityDeploy Include="Models\DemoData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelMvcDemo.Designer.cs</LastGenOutput>
+      <LastGenOutput>DemoData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ModelMvcDemo.Context.tt">
+    <Content Include="Models\DemoData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelMvcDemo.edmx</DependentUpon>
-      <LastGenOutput>ModelMvcDemo.Context.cs</LastGenOutput>
+      <DependentUpon>DemoData.edmx</DependentUpon>
+      <LastGenOutput>DemoData.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ModelMvcDemo.edmx.diagram">
-      <DependentUpon>ModelMvcDemo.edmx</DependentUpon>
+    <Content Include="Models\DemoData.edmx.diagram">
+      <DependentUpon>DemoData.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\ModelMvcDemo.tt">
+    <Content Include="Models\DemoData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelMvcDemo.edmx</DependentUpon>
-      <LastGenOutput>ModelMvcDemo.cs</LastGenOutput>
+      <DependentUpon>DemoData.edmx</DependentUpon>
+      <LastGenOutput>DemoData.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

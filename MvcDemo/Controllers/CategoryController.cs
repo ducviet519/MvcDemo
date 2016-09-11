@@ -13,7 +13,7 @@ namespace MvcDemo.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
                 List<Category> lstCategory = db.Categories.ToList();
                 return View(lstCategory);
@@ -28,7 +28,7 @@ namespace MvcDemo.Controllers
             string tenChuyenMuc = collection["TenChuyenMuc"].ToString();
             int chuyenMucCha = collection["ChuyenMucCha"].ToString() != "" ? Convert.ToInt32(collection["ChuyenMucCha"].ToString()) : 0;
 
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
                 //Them chuyen muc vao csdl
                 //Khoi tao doi tuong muon them vao csdl
@@ -51,9 +51,9 @@ namespace MvcDemo.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
-                Category cate = db.Categories.FirstOrDefault(x => x.ID == id);
+                Category cate = db.Categories.FirstOrDefault(x => x.Id == id);
                 return View(cate);
             }
         }
@@ -62,14 +62,14 @@ namespace MvcDemo.Controllers
         [HttpPost]
         public ActionResult Edit(FormCollection collection, int id)
         {
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
                 //Lay du lieu tu tren view
                 string tenChuyenMuc = collection["TenChuyenMuc"].ToString();
                 int chuyenMucCha = collection["ChuyenMucCha"].ToString() != "" ? Convert.ToInt32(collection["ChuyenMucCha"].ToString()) : 0;
 
                 //Lấy đối tượng cần sửa
-                Category cate = db.Categories.FirstOrDefault(x => x.ID == id);
+                Category cate = db.Categories.FirstOrDefault(x => x.Id == id);
 
                 //Gán lại thông tin cần sửa
                 cate.Name = tenChuyenMuc;
@@ -86,10 +86,10 @@ namespace MvcDemo.Controllers
 
         public ActionResult Delete(int id)
         {
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
                 //Lấy đối tượng cần sửa
-                Category cate = db.Categories.FirstOrDefault(x => x.ID == id);
+                Category cate = db.Categories.FirstOrDefault(x => x.Id == id);
 
                 //Thực hiện xóa đối tượng
                 db.Categories.Remove(cate);

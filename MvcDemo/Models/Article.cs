@@ -14,9 +14,9 @@ namespace MvcDemo.Models
     
     public partial class Article
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
-        public Nullable<int> CategoryID { get; set; }
+        public Nullable<int> CategoryId { get; set; }
     
         public virtual Category Category { get; set; }
     }

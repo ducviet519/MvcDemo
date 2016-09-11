@@ -18,14 +18,14 @@ namespace MvcDemo.Controllers
         // GET: //Article/LoadArticle/
         public JsonResult LoadArticle()
         {
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
 
                 var lstArticles = db.Articles.Select(x => new
                 {
-                    Id123 = x.ID,
+                    Id123 = x.Id,
                     Title123 = x.Title,
-                    CategoryId123 = x.CategoryID
+                    CategoryId123 = x.CategoryId
                 }).ToList();
 
                 return Json(new { Articles123 = lstArticles }, JsonRequestBehavior.AllowGet);
@@ -36,7 +36,7 @@ namespace MvcDemo.Controllers
         //POST: //Aricle/AddArticle/
         public JsonResult AddArticle(string tieude, string chuyenmuc)
         {
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
                 try
                 {
@@ -45,7 +45,7 @@ namespace MvcDemo.Controllers
 
                     //B2 Gan cac gia tri cho cac thuoc tinh tuong ung
                     article.Title = tieude;
-                    article.CategoryID = chuyenmuc != null ? Convert.ToInt32(chuyenmuc) : 0;
+                    article.CategoryId = chuyenmuc != null ? Convert.ToInt32(chuyenmuc) : 0;
 
                     //B3 Them doi tuong vao csdl
                     db.Articles.Add(article);
@@ -53,9 +53,9 @@ namespace MvcDemo.Controllers
 
                     return Json(new
                     {
-                        ID = article.ID,
+                        ID = article.Id,
                         Title = article.Title,
-                        CategoryID = article.CategoryID
+                        CategoryID = article.CategoryId
                     });
                 }
                 catch
@@ -68,9 +68,9 @@ namespace MvcDemo.Controllers
         //POST: //Aricle/DeleteArticle/
         public int DeleteArticle(int id)
         {
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
-                Article article = db.Articles.SingleOrDefault(x => x.ID == id);
+                Article article = db.Articles.SingleOrDefault(x => x.Id == id);
                 if (article != null)
                 {
                     db.Articles.Remove(article);
@@ -83,19 +83,19 @@ namespace MvcDemo.Controllers
         //Post: //Article/Edit/
         public JsonResult EditArticle(int id, string tieude, string machuyenmuc)
         {
-            using (MVC_Demo2Entities db = new MVC_Demo2Entities())
+            using (MVCDemoEntities db = new MVCDemoEntities())
             {
                 try
                 {
-                    Article editArticle = db.Articles.SingleOrDefault(n => n.ID == id);
+                    Article editArticle = db.Articles.SingleOrDefault(n => n.Id == id);
                     editArticle.Title = tieude;
-                    editArticle.CategoryID = machuyenmuc != null ? Convert.ToInt32(machuyenmuc) : 0;
+                    editArticle.CategoryId = machuyenmuc != null ? Convert.ToInt32(machuyenmuc) : 0;
                     db.SaveChanges();
                     return Json(new
                     {
-                        ID = editArticle.ID,
+                        ID = editArticle.Id,
                         Title = editArticle.Title,
-                        CategoryID = editArticle.CategoryID
+                        CategoryID = editArticle.CategoryId
                     });
                 }
                 catch

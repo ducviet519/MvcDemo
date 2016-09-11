@@ -13,10 +13,10 @@ namespace MvcDemo.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MVC_Demo2Entities : DbContext
+    public partial class MVCDemoEntities : DbContext
     {
-        public MVC_Demo2Entities()
-            : base("name=MVC_Demo2Entities")
+        public MVCDemoEntities()
+            : base("name=MVCDemoEntities")
         {
         }
     
